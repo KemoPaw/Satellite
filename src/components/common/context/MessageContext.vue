@@ -10,6 +10,13 @@
       >
         {{ $t('message_context.copy') }}
       </li>
+            <li
+        v-clipboard:copy="getDecoded(message.payload.data)"
+        v-on:click="closeSoon"
+        v-if="isTextMessage()"
+      >
+        {{ $t('message_context.reply') }}
+      </li>
       <li v-if="isTextMessage()">{{ $t('message_context.edit') }}</li>
       <li v-if="isTextMessage()">{{ $t('message_context.speak') }}</li>
     </ul>

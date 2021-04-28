@@ -359,6 +359,7 @@
   "message_context": {
     "actions": "MESSAGE ACTIONS",
     "copy": "Copy Text",
+    "reply": "Reply to Message",
     "edit": "Edit Message",
     "speak": "Speak Message",
     "copy_id": "Copy ID"
