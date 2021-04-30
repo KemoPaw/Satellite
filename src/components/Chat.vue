@@ -150,6 +150,7 @@ export default {
     window.ipfs = ipfs
     this.checkMobile()
     window.addEventListener('resize', this.checkMobile, true)
+ 
 
     // this.updateServers()
   }

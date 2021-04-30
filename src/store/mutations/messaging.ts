@@ -48,4 +48,10 @@ export default {
     unreads = unreads.filter(a => a !== address);
     state.unreads = unreads;
   },
+  // Handle for message reply in the current chat
+  messageReply(state: IState, reply: string) {
+    state.activeChatReply = reply;
+    state.activeChatReplyAvailable = true;
+  },
+
 };

@@ -86,6 +86,8 @@ export interface IState {
   // Chat
   activeChats: Array<any>;
   activeChat: any;
+  activeChatReply: any;
+  activeChatReplyAvailable: boolean;
   messages: Array<any>;
   typingUsers: any;
   userNotes: any;
@@ -208,6 +210,8 @@ export const defaultState: IState = {
   // Chat
   activeChats: [],
   activeChat: false,
+  activeChatReply: '',
+  activeChatReplyAvailable: false,
   messages: [],
   typingUsers: {},
   userNotes: {},

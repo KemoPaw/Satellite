@@ -12,7 +12,7 @@
       </li>
             <li
         v-clipboard:copy="getDecoded(message.payload.data)"
-        v-on:click="closeSoon"
+        v-on:click="loadMsgInConsole"
         v-if="isTextMessage()"
       >
         {{ $t('message_context.reply') }}
@@ -62,6 +62,16 @@ export default {
         this.message.payload.data &&
         typeof this.message.payload.data === 'string'
       )
+    },
+    loadMsgInConsole () {
+      // console.log("printing the message I wanted to reply to:");
+      let replyMessage = this.getDecoded(this.message.payload.data);
+      //add message to state;
+      this.$store.commit('messageReply', replyMessage);
+
+      console.log(this.$store.state.activeChatReply)
+      // console.log(replyMessage);
+      this.closeSoon();
     }
   },
   watch: {
@@ -75,6 +85,8 @@ export default {
   mounted () {
     this.$refs.menu.style.top = `${this.y}px`
     this.$refs.menu.style.left = `${this.x}px`
+    // console.log(this.$store);
+    // console.log(this.$store.state.activeChat);
   }
 }
 </script>
